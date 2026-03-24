@@ -7,14 +7,14 @@ Stop discovering missing env vars at runtime.
 ## Install
 
 ```bash
-npm install envguard
+npm install @bladedev/envguard
 ```
 
 ## Usage
 
 ```ts
 // env.schema.ts
-import { envguard, t } from 'envguard'
+import { envguard, t } from '@bladedev/envguard'
 
 export default envguard({
   DATABASE_URL: t.url({ required: true }),

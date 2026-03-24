@@ -1,5 +1,5 @@
 {
-  "name": "envguard",
+  "name": "@bladedev/envguard",
   "version": "0.1.0",
   "description": "Type-safe .env manager — schema, validation, sync, CLI",
   "type": "module",
