@@ -6,6 +6,7 @@ export function parse(input: string): Record<string, string> {
     const line = rawLine.trim()
     if (!line || line.startsWith('#')) continue
 
+    // strip `export ` prefix that some shells require
     const stripped = line.startsWith('export ') ? line.slice(7) : line
     const eqIndex = stripped.indexOf('=')
     if (eqIndex === -1) continue
@@ -24,6 +25,7 @@ function parseValue(raw: string): string {
     return trimmed.slice(1, -1)
   }
 
+  // double-quoted: single-pass replacement so \\n → \n literal, not newline
   if (trimmed.startsWith('"') && trimmed.endsWith('"')) {
     return trimmed.slice(1, -1).replace(/\\([nrt"\\])/g, (_, ch) => {
       const map: Record<string, string> = { n: '\n', r: '\r', t: '\t', '"': '"', '\\': '\\' }

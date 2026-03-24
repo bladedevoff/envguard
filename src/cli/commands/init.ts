@@ -5,6 +5,7 @@ import { parse } from '../../core/parser'
 
 const SECRET_PATTERNS = ['key', 'secret', 'token', 'password', 'pass', 'credential', 'auth']
 
+// best-effort type inference — priority: port (by name) > url > boolean > number > string
 function inferType(key: string, value: string): string {
   const lower = key.toLowerCase()
   const isSecret = SECRET_PATTERNS.some(p => lower.includes(p))

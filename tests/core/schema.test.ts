@@ -9,7 +9,7 @@ describe('t.string', () => {
 
   it('rejects empty string when required', () => {
     const field = t.string()
-    expect(field._validate('')).toEqual({ success: false, message: 'must be a non-empty string' })
+    expect(field._validate('')).toEqual({ success: false, message: 'expected non-empty string' })
   })
 })
 

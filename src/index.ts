@@ -26,7 +26,7 @@ export function envguard<S extends Schema>(
 
   const raw = path
     ? parse(readFileSync(path, 'utf8'))
-    : (process.env as Record<string, string>)
+    : process.env
 
   const result = validate(schema, raw)
 

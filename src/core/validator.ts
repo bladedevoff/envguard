@@ -4,7 +4,7 @@ type ValidateResult<S extends Schema> =
   | { ok: true; env: { [K in keyof S]: S[K]['_type'] } }
   | { ok: false; errors: ValidationError[] }
 
-export function validate<S extends Schema>(schema: S, parsed: Record<string, string>): ValidateResult<S> {
+export function validate<S extends Schema>(schema: S, parsed: Record<string, string | undefined>): ValidateResult<S> {
   const errors: ValidationError[] = []
   const env: Record<string, unknown> = {}
 
