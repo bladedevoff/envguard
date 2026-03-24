@@ -38,6 +38,10 @@
     "schema",
     "cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bladedevoff/envguard"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=18"
